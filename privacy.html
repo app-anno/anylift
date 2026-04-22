@@ -62,7 +62,7 @@
     <!-- 日本語版 -->
     <div class="ja">
         <h1>AnyLift プライバシーポリシー</h1>
-        <p><strong>最終更新日：2026年4月4日</strong></p>
+        <p><strong>最終更新日：2026年4月22日</strong></p>
 
         <h2>1. はじめに</h2>
         <p>本プライバシーポリシー（以下「本ポリシー」）は、AnyLift（以下「本アプリ」）における個人情報の取り扱いについて説明するものです。本アプリは anno masahiro（以下「運営者」）が運営しています。</p>
@@ -89,7 +89,16 @@
         <p>アプリの安定性向上のため、クラッシュレポートおよびエラーログを収集します。</p>
 
         <h3>(g) AIチャットデータ</h3>
-        <p>AIフィットネスコーチ機能をご利用の場合、チャットでの入力内容および会話履歴を取得します。また、パーソナライズされたアドバイスを提供するため、お客様のトレーニングデータの一部をAI分析に使用します。</p>
+        <p>AIフィットネスコーチ機能をご利用の場合、以下のデータを第三者AIサービス（下記「4. 第三者への情報提供」参照）に送信します。送信はユーザーが本アプリ内の明示的同意画面で「同意して利用開始」を選択した場合にのみ行われます。</p>
+        <ul>
+            <li>チャットで入力したメッセージ本文および会話履歴</li>
+            <li>トレーニング履歴（種目、重量、回数、セット数、日付）</li>
+            <li>体重・体組成記録（体脂肪率、筋肉量、ウエスト等）</li>
+            <li>種目別統計情報（推定1RM、ベスト記録）</li>
+            <li>ユーザープロフィール設定（単位、言語、テーマ）</li>
+            <li>トレーニング計画情報</li>
+        </ul>
+        <p>なお、ユーザーが「診断ログ共有」に任意で同意した場合、サービス改善のため送信メッセージ本文を匿名化された識別子（Clerk User ID）とともに Google BigQuery に記録し、<strong>90日で自動削除</strong>します。既定はOFFで、設定画面からいつでも変更できます。</p>
 
         <h3>(h) 購入情報</h3>
         <p>サブスクリプション（定期購読）をご利用の場合、購入ステータスおよび有効期限に関する情報を取得します。決済情報（クレジットカード番号等）は運営者が直接取得することはなく、Apple / Google のストアを通じて処理されます。</p>
@@ -114,7 +123,8 @@
             <li><strong>Google AdMob</strong> — 広告の配信</li>
             <li><strong>Apple HealthKit / Google Health Connect</strong> — ユーザー許可に基づく健康データの連携</li>
             <li><strong>RevenueCat</strong> — サブスクリプション（定期購読）の管理。購入情報、サブスクリプションステータス、Apple IDまたはGoogle Playアカウントに関連する匿名化された識別子が処理されます。<br>プライバシーポリシー: <a href="https://www.revenuecat.com/privacy/" target="_blank">https://www.revenuecat.com/privacy/</a></li>
-            <li><strong>Anthropic</strong> — AIフィットネスコーチ機能のために、入力内容およびトレーニングデータの一部を第三者AIサービス（Anthropic, PBC）に送信します。送信されたデータはAIモデルの学習には使用されません。<br>プライバシーポリシー: <a href="https://www.anthropic.com/privacy" target="_blank">https://www.anthropic.com/privacy</a></li>
+            <li><strong>Anthropic, PBC</strong> — AIコーチ機能の応答生成のため、上記「(g) AIチャットデータ」を Anthropic API（Claude）に送信します。Anthropicはデータ処理者として動作し、送信データを自社のAIモデル訓練には使用しません。Anthropicのデータ保持ポリシーに従い、<strong>通常30日程度で削除</strong>されます（不正利用検知等の例外で最長2年／7年保持される場合があります）。<br>プライバシーポリシー: <a href="https://www.anthropic.com/privacy" target="_blank">https://www.anthropic.com/privacy</a><br>商用API利用規約: <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank">https://www.anthropic.com/legal/commercial-terms</a></li>
+            <li><strong>OpenAI, Inc.</strong> — 科学的エビデンス検索機能で使用する検索キーワードの埋め込み（Embeddings）生成のため、OpenAI Embeddings API に検索クエリ文字列（最大200文字、個人情報の粗フィルタ適用）を送信します。OpenAIはデータ処理者として動作し、送信データを自社のAIモデル訓練には使用しません。<strong>通常30日程度で削除</strong>されます。<br>プライバシーポリシー: <a href="https://openai.com/policies/privacy-policy" target="_blank">https://openai.com/policies/privacy-policy</a><br>APIデータ利用規約: <a href="https://openai.com/policies/api-data-usage-policies" target="_blank">https://openai.com/policies/api-data-usage-policies</a></li>
         </ul>
 
         <h2>5. 広告について</h2>
@@ -124,7 +134,8 @@
         <p>トレーニングデータはクラウドサーバーに保存されます。一部の設定データ（言語、テーマ等）はデバイス内のローカルストレージに保存されます。</p>
 
         <h2>7. ユーザーの権利</h2>
-        <p>ユーザーはいつでもアカウントの削除を要求することができます。アカウントを削除すると、サーバーに保存されている関連データは削除されます。</p>
+        <p>ユーザーはいつでもアカウントの削除を要求することができます。アカウントを削除すると、運営者のサーバーに保存されている関連データは削除されます。</p>
+        <p>アカウント削除時点までに第三者AIサービス（Anthropic、OpenAI）に送信済みのデータは、各社のデータ保持ポリシー（通常30日程度）に従って自動削除されます。診断ログ共有に同意していた場合、BigQueryに記録されたメッセージは90日の自動削除対象ですが、早期削除をご希望の場合は下記の連絡先までご連絡ください。</p>
         <p>データの削除やその他のお問い合わせは、下記の連絡先までご連絡ください。</p>
 
         <h2>8. 子供のプライバシー</h2>
@@ -139,12 +150,16 @@
             運営者: anno masahiro<br>
             メール: <a href="mailto:usecodejp@gmail.com">usecodejp@gmail.com</a>
         </p>
+
+        <h2>11. AIサービス利用における同意</h2>
+        <p>AIコーチ機能の初回利用時に、送信されるデータ項目および送信先について明示する同意画面を表示します。ユーザーが「同意して利用開始」を選択した場合に限り、第三者AIサービス（Anthropic、OpenAI）へのデータ送信を開始します。</p>
+        <p>同意はアプリの[設定]→[AIプライバシー]からいつでも撤回可能です。同意画面を表示する前、および同意撤回後は、AIコーチ機能のメッセージ送信はすべて運営者のサーバー側でブロックされ、第三者AIサービスへのデータ送信は発生しません。</p>
     </div>
 
     <!-- English -->
     <div class="en">
         <h1>AnyLift Privacy Policy</h1>
-        <p><strong>Last Updated: April 4, 2026</strong></p>
+        <p><strong>Last Updated: April 22, 2026</strong></p>
 
         <h2>1. Introduction</h2>
         <p>This Privacy Policy (the "Policy") describes how AnyLift (the "App") handles personal information. The App is operated by anno masahiro (the "Operator").</p>
@@ -171,7 +186,16 @@
         <p>We collect crash reports and error logs to improve app stability.</p>
 
         <h3>(g) AI Chat Data</h3>
-        <p>When you use the AI Fitness Coach feature, we collect your chat inputs and conversation history. We also use portions of your training data for AI analysis to provide personalized advice.</p>
+        <p>When you use the AI Fitness Coach feature, we send the following data to third-party AI services (see "4. Third-Party Sharing" below). Data is sent only when you explicitly tap "Agree and Continue" on the in-app consent screen.</p>
+        <ul>
+            <li>Chat messages you type and conversation history</li>
+            <li>Workout history (exercises, weight, reps, sets, dates)</li>
+            <li>Body weight and body composition records (body fat %, muscle mass, waist, etc.)</li>
+            <li>Per-exercise statistics (estimated 1RM, personal records)</li>
+            <li>User profile settings (unit, language, theme)</li>
+            <li>Training plan information</li>
+        </ul>
+        <p>If you additionally opt into "Diagnostic Log Sharing", the raw message body is recorded in Google BigQuery with an anonymized identifier (Clerk User ID) for service improvement and automatically deleted after <strong>90 days</strong>. This is OFF by default and can be changed anytime in settings.</p>
 
         <h3>(h) Purchase Information</h3>
         <p>When you use a subscription, we collect information about your purchase status and expiration date. Payment details (such as credit card numbers) are not collected directly by us and are processed through Apple / Google stores.</p>
@@ -196,7 +220,8 @@
             <li><strong>Google AdMob</strong> — Ad delivery</li>
             <li><strong>Apple HealthKit / Google Health Connect</strong> — Health data integration with user permission</li>
             <li><strong>RevenueCat</strong> — Subscription management. Purchase information, subscription status, and anonymized identifiers associated with your Apple ID or Google Play account are processed.<br>Privacy Policy: <a href="https://www.revenuecat.com/privacy/" target="_blank">https://www.revenuecat.com/privacy/</a></li>
-            <li><strong>Anthropic</strong> — For the AI Fitness Coach feature, your input and portions of your training data are sent to a third-party AI service (Anthropic, PBC). Data sent is not used for training AI models.<br>Privacy Policy: <a href="https://www.anthropic.com/privacy" target="_blank">https://www.anthropic.com/privacy</a></li>
+            <li><strong>Anthropic, PBC</strong> — For the AI Coach feature, the data listed in "(g) AI Chat Data" above is sent to the Anthropic API (Claude) to generate coach responses. Anthropic acts as a data processor and does NOT use this data to train its AI models. Data is typically deleted within approximately 30 days per Anthropic's data retention policy (with exceptions for abuse detection up to 2 years / 7 years for safety classifier scores).<br>Privacy Policy: <a href="https://www.anthropic.com/privacy" target="_blank">https://www.anthropic.com/privacy</a><br>Commercial Terms: <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank">https://www.anthropic.com/legal/commercial-terms</a></li>
+            <li><strong>OpenAI, Inc.</strong> — For the science-based evidence search feature, search query strings (up to 200 characters, with rough PII filtering applied) are sent to the OpenAI Embeddings API to generate embeddings. OpenAI acts as a data processor and does NOT use this data to train its AI models. Data is typically deleted within approximately 30 days.<br>Privacy Policy: <a href="https://openai.com/policies/privacy-policy" target="_blank">https://openai.com/policies/privacy-policy</a><br>API Data Usage Policies: <a href="https://openai.com/policies/api-data-usage-policies" target="_blank">https://openai.com/policies/api-data-usage-policies</a></li>
         </ul>
 
         <h2>5. Advertising</h2>
@@ -206,7 +231,8 @@
         <p>Training data is stored on cloud servers. Some settings (language, theme, etc.) are stored locally on your device.</p>
 
         <h2>7. Your Rights</h2>
-        <p>You may request account deletion at any time. When your account is deleted, associated data will be removed from our servers.</p>
+        <p>You may request account deletion at any time. When your account is deleted, associated data stored on our servers will be removed.</p>
+        <p>Data already transmitted to third-party AI services (Anthropic, OpenAI) prior to account deletion is automatically deleted per each provider's data retention policy (typically within approximately 30 days). For diagnostic log sharing opt-in users, messages recorded in BigQuery are subject to the 90-day auto-deletion; to request earlier deletion, please contact us using the information below.</p>
         <p>For data deletion or other inquiries, please contact us at the address below.</p>
 
         <h2>8. Children's Privacy</h2>
@@ -221,6 +247,10 @@
             Operator: anno masahiro<br>
             Email: <a href="mailto:usecodejp@gmail.com">usecodejp@gmail.com</a>
         </p>
+
+        <h2>11. Consent for AI Services</h2>
+        <p>When you first use the AI Coach feature, we present an in-app consent screen that discloses the data categories sent and the third-party AI service recipients. Data transmission to third-party AI services (Anthropic, OpenAI) only begins after you tap "Agree and Continue".</p>
+        <p>You can revoke your consent anytime from Settings → AI Privacy in the app. Before consent is given, and after consent is revoked, all AI Coach message-send requests are blocked on our server, and no data is transmitted to third-party AI services.</p>
     </div>
 
     <footer>
