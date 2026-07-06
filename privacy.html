@@ -62,7 +62,7 @@
     <!-- 日本語版 -->
     <div class="ja">
         <h1>AnyLift プライバシーポリシー</h1>
-        <p><strong>最終更新日：2026年5月6日</strong></p>
+        <p><strong>最終更新日：2026年7月6日</strong></p>
 
         <h2>1. はじめに</h2>
         <p>本プライバシーポリシー（以下「本ポリシー」）は、AnyLift（以下「本アプリ」）における個人情報の取り扱いについて説明するものです。本アプリは anno masahiro（以下「運営者」）が運営しています。</p>
@@ -88,16 +88,20 @@
         <h3>(f) クラッシュ情報</h3>
         <p>アプリの安定性向上のため、クラッシュレポートおよびエラーログを収集します。</p>
 
-        <h3>(g) AIチャットデータ</h3>
-        <p>AIフィットネスコーチ機能をご利用の場合、以下のデータを第三者AIサービス（下記「4. 第三者への情報提供」参照）に送信します。送信はユーザーが本アプリ内の明示的同意画面で「同意して利用開始」を選択した場合にのみ行われます。</p>
+        <h3>(g) AI機能に送信されるデータ（AIコーチ・食事AI解析）</h3>
+        <p>AIフィットネスコーチ機能または食事AI解析機能（写真でAI解析・AI栄養推定）をご利用の場合、以下のデータを第三者AIサービス（下記「4. 第三者への情報提供」参照）に送信します。送信はユーザーが本アプリ内の明示的同意画面で「同意して利用開始」を選択した場合にのみ行われます。</p>
         <ul>
             <li>チャットで入力したメッセージ本文および会話履歴</li>
+            <li>食事写真（「写真でAI解析」を使う場合）</li>
+            <li>食品名・食事内容のテキスト（「AI栄養推定」を使う場合）</li>
+            <li>食事区分・撮影時刻（「写真でAI解析」を使う場合）</li>
             <li>トレーニング履歴（種目、重量、回数、セット数、日付）</li>
             <li>体重・体組成記録（体脂肪率、筋肉量、ウエスト等）</li>
             <li>種目別統計情報（推定1RM、ベスト記録）</li>
             <li>ユーザープロフィール設定（単位、言語、テーマ）</li>
             <li>トレーニング計画情報</li>
         </ul>
+        <p>食事写真そのものは運営者のサーバーには保存されません。栄養推定のために Anthropic API に送信され、同社のデータ保持ポリシー（通常30日程度で削除）に従って取り扱われます。解析結果（推定された食品名・栄養値）は食事記録として運営者のサーバーに保存されます。AIによる栄養推定はあくまで推定値であり、アプリ内でもその旨を表示しています。</p>
         <p>なお、ユーザーが「診断ログ共有」に任意で同意した場合、サービス改善のため送信メッセージ本文を Firebase Analytics のイベントパラメータとして送信し、Firebase の BigQuery Export 機能を通じて Google BigQuery に連携・記録します。連携されたデータは Firebase Analytics および BigQuery のデータ保持設定に従って管理されます。既定はOFFで、設定画面からいつでも変更できます。</p>
 
         <h3>(h) 購入情報</h3>
@@ -110,6 +114,7 @@
             <li>不具合の調査・対応</li>
             <li>利用状況の分析</li>
             <li>AIフィットネスコーチによるパーソナライズされたトレーニングアドバイスの提供</li>
+            <li>食事写真・食品名からの栄養推定（食事AI解析）</li>
             <li>サブスクリプションの管理</li>
         </ul>
 
@@ -130,7 +135,7 @@
             <li><strong>Google BigQuery</strong> — 使用状況ログ・デバイス情報の分析</li>
             <li><strong>Apple HealthKit / Google Health Connect</strong> — ユーザー許可に基づく健康データの連携</li>
             <li><strong>RevenueCat</strong> — サブスクリプション（定期購読）の管理。購入情報、サブスクリプションステータス、Apple IDまたはGoogle Playアカウントに関連する匿名化された識別子が処理されます。<br>プライバシーポリシー: <a href="https://www.revenuecat.com/privacy/" target="_blank">https://www.revenuecat.com/privacy/</a></li>
-            <li><strong>Anthropic, PBC</strong> — AIコーチ機能の応答生成のため、上記「(g) AIチャットデータ」を Anthropic API（Claude）に送信します。Anthropicはデータ処理者として動作し、送信データを自社のAIモデル訓練には使用しません。Anthropicのデータ保持ポリシーに従い、<strong>通常30日程度で削除</strong>されます（不正利用検知等の例外で最長2年／7年保持される場合があります）。<br>プライバシーポリシー: <a href="https://www.anthropic.com/privacy" target="_blank">https://www.anthropic.com/privacy</a><br>商用API利用規約: <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank">https://www.anthropic.com/legal/commercial-terms</a></li>
+            <li><strong>Anthropic, PBC</strong> — AIコーチ機能の応答生成、および食事写真・食品名の解析による栄養推定のため、上記「(g) AI機能に送信されるデータ」を Anthropic API（Claude）に送信します。Anthropicはデータ処理者として動作し、送信データを自社のAIモデル訓練には使用しません。Anthropicのデータ保持ポリシーに従い、<strong>通常30日程度で削除</strong>されます（不正利用検知等の例外で最長2年／7年保持される場合があります）。<br>プライバシーポリシー: <a href="https://www.anthropic.com/privacy" target="_blank">https://www.anthropic.com/privacy</a><br>商用API利用規約: <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank">https://www.anthropic.com/legal/commercial-terms</a></li>
             <li><strong>OpenAI, Inc.</strong> — 科学的エビデンス検索機能で使用する検索キーワードの埋め込み（Embeddings）生成のため、OpenAI Embeddings API に検索クエリ文字列（最大200文字、個人情報の粗フィルタ適用）を送信します。OpenAIはデータ処理者として動作し、送信データを自社のAIモデル訓練には使用しません。<strong>通常30日程度で削除</strong>されます。<br>プライバシーポリシー: <a href="https://openai.com/policies/privacy-policy" target="_blank">https://openai.com/policies/privacy-policy</a><br>APIデータ利用規約: <a href="https://openai.com/policies/api-data-usage-policies" target="_blank">https://openai.com/policies/api-data-usage-policies</a></li>
         </ul>
 
@@ -156,14 +161,14 @@
         </p>
 
         <h2>10. AIサービス利用における同意</h2>
-        <p>AIコーチ機能の初回利用時に、送信されるデータ項目および送信先について明示する同意画面を表示します。ユーザーが「同意して利用開始」を選択した場合に限り、第三者AIサービス（Anthropic、OpenAI）へのデータ送信を開始します。</p>
-        <p>同意はアプリの[設定]→[AIプライバシー]からいつでも撤回可能です。同意画面を表示する前、および同意撤回後は、AIコーチ機能のメッセージ送信はすべて運営者のサーバー側でブロックされ、第三者AIサービスへのデータ送信は発生しません。</p>
+        <p>AI機能（AIコーチ・食事AI解析）の初回利用時に、送信されるデータ項目および送信先について明示する同意画面を表示します。ユーザーが「同意して利用開始」を選択した場合に限り、第三者AIサービス（Anthropic、OpenAI）へのデータ送信を開始します。同意はAIコーチ・食事AI解析に共通の1つの同意として扱われます。</p>
+        <p>同意はアプリの[設定]→[AIプライバシー]からいつでも撤回可能です。同意画面を表示する前、および同意撤回後は、AI機能の利用リクエスト（AIコーチのメッセージ送信・食事AI解析）はすべて運営者のサーバー側でブロックされ、第三者AIサービスへのデータ送信は発生しません。</p>
     </div>
 
     <!-- English -->
     <div class="en">
         <h1>AnyLift Privacy Policy</h1>
-        <p><strong>Last Updated: May 6, 2026</strong></p>
+        <p><strong>Last Updated: July 6, 2026</strong></p>
 
         <h2>1. Introduction</h2>
         <p>This Privacy Policy (the "Policy") describes how AnyLift (the "App") handles personal information. The App is operated by anno masahiro (the "Operator").</p>
@@ -189,16 +194,20 @@
         <h3>(f) Crash Information</h3>
         <p>We collect crash reports and error logs to improve app stability.</p>
 
-        <h3>(g) AI Chat Data</h3>
-        <p>When you use the AI Fitness Coach feature, we send the following data to third-party AI services (see "4. Third-Party Sharing" below). Data is sent only when you explicitly tap "Agree and Continue" on the in-app consent screen.</p>
+        <h3>(g) Data Sent to AI Features (AI Coach / AI Meal Analysis)</h3>
+        <p>When you use the AI Fitness Coach feature or the AI meal analysis features (photo-based AI analysis / AI nutrition estimation), we send the following data to third-party AI services (see "4. Third-Party Sharing" below). Data is sent only when you explicitly tap "Agree and Continue" on the in-app consent screen.</p>
         <ul>
             <li>Chat messages you type and conversation history</li>
+            <li>Meal photos (when you use photo-based AI analysis)</li>
+            <li>Food names and meal description text (when you use AI nutrition estimation)</li>
+            <li>Meal type and photo capture time (when you use photo-based AI analysis)</li>
             <li>Workout history (exercises, weight, reps, sets, dates)</li>
             <li>Body weight and body composition records (body fat %, muscle mass, waist, etc.)</li>
             <li>Per-exercise statistics (estimated 1RM, personal records)</li>
             <li>User profile settings (unit, language, theme)</li>
             <li>Training plan information</li>
         </ul>
+        <p>Meal photos themselves are never stored on our servers. They are sent to the Anthropic API for nutrition estimation and handled according to Anthropic's data retention policy (typically deleted within approximately 30 days). The analysis results (estimated food names and nutrition values) are stored on our servers as part of your meal records. AI nutrition estimates are approximations, and the app labels them as such.</p>
         <p>If you additionally opt into "Diagnostic Log Sharing", the raw message body is sent as Firebase Analytics event parameters and exported to Google BigQuery via Firebase's BigQuery Export for service improvement. Data is managed according to the retention settings of Firebase Analytics and BigQuery. This is OFF by default and can be changed anytime in settings.</p>
 
         <h3>(h) Purchase Information</h3>
@@ -211,6 +220,7 @@
             <li>To investigate and resolve issues</li>
             <li>To analyze usage patterns</li>
             <li>To provide personalized training advice through the AI Fitness Coach</li>
+            <li>To estimate nutrition from meal photos and food names (AI meal analysis)</li>
             <li>To manage subscriptions</li>
         </ul>
 
@@ -231,7 +241,7 @@
             <li><strong>Google BigQuery</strong> — Usage logs and device information analysis</li>
             <li><strong>Apple HealthKit / Google Health Connect</strong> — Health data integration with user permission</li>
             <li><strong>RevenueCat</strong> — Subscription management. Purchase information, subscription status, and anonymized identifiers associated with your Apple ID or Google Play account are processed.<br>Privacy Policy: <a href="https://www.revenuecat.com/privacy/" target="_blank">https://www.revenuecat.com/privacy/</a></li>
-            <li><strong>Anthropic, PBC</strong> — For the AI Coach feature, the data listed in "(g) AI Chat Data" above is sent to the Anthropic API (Claude) to generate coach responses. Anthropic acts as a data processor and does NOT use this data to train its AI models. Data is typically deleted within approximately 30 days per Anthropic's data retention policy (with exceptions for abuse detection up to 2 years / 7 years for safety classifier scores).<br>Privacy Policy: <a href="https://www.anthropic.com/privacy" target="_blank">https://www.anthropic.com/privacy</a><br>Commercial Terms: <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank">https://www.anthropic.com/legal/commercial-terms</a></li>
+            <li><strong>Anthropic, PBC</strong> — The data listed in "(g) Data Sent to AI Features" above is sent to the Anthropic API (Claude) to generate AI Coach responses and to estimate nutrition from meal photos and food names. Anthropic acts as a data processor and does NOT use this data to train its AI models. Data is typically deleted within approximately 30 days per Anthropic's data retention policy (with exceptions for abuse detection up to 2 years / 7 years for safety classifier scores).<br>Privacy Policy: <a href="https://www.anthropic.com/privacy" target="_blank">https://www.anthropic.com/privacy</a><br>Commercial Terms: <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank">https://www.anthropic.com/legal/commercial-terms</a></li>
             <li><strong>OpenAI, Inc.</strong> — For the science-based evidence search feature, search query strings (up to 200 characters, with rough PII filtering applied) are sent to the OpenAI Embeddings API to generate embeddings. OpenAI acts as a data processor and does NOT use this data to train its AI models. Data is typically deleted within approximately 30 days.<br>Privacy Policy: <a href="https://openai.com/policies/privacy-policy" target="_blank">https://openai.com/policies/privacy-policy</a><br>API Data Usage Policies: <a href="https://openai.com/policies/api-data-usage-policies" target="_blank">https://openai.com/policies/api-data-usage-policies</a></li>
         </ul>
 
@@ -257,8 +267,8 @@
         </p>
 
         <h2>10. Consent for AI Services</h2>
-        <p>When you first use the AI Coach feature, we present an in-app consent screen that discloses the data categories sent and the third-party AI service recipients. Data transmission to third-party AI services (Anthropic, OpenAI) only begins after you tap "Agree and Continue".</p>
-        <p>You can revoke your consent anytime from Settings → AI Privacy in the app. Before consent is given, and after consent is revoked, all AI Coach message-send requests are blocked on our server, and no data is transmitted to third-party AI services.</p>
+        <p>When you first use an AI feature (AI Coach or AI meal analysis), we present an in-app consent screen that discloses the data categories sent and the third-party AI service recipients. Data transmission to third-party AI services (Anthropic, OpenAI) only begins after you tap "Agree and Continue". A single consent covers both the AI Coach and AI meal analysis.</p>
+        <p>You can revoke your consent anytime from Settings → AI Privacy in the app. Before consent is given, and after consent is revoked, all AI feature requests (AI Coach messages and AI meal analysis) are blocked on our server, and no data is transmitted to third-party AI services.</p>
     </div>
 
     <footer>
